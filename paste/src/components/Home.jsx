@@ -54,7 +54,7 @@ const Home = () => {
     <div className='flex flex-col items-center'>
       <div className='flex gap-7  m-5 justify-between items-center w-[65vw]'>
         <input type="text" 
-      className='p-2 rounded mt-2 border border-gray-400 hover:scale-102 bg-white w-[60vw] pl-4'
+      className='p-2 rounded mt-2 border border-gray-400 hover:scale-102  w-[60vw] pl-4'
       placeholder='Enter title here'
       value={title}
       onChange={(e)=>setTitle(e.target.value)}

@@ -29,9 +29,9 @@ const Paste = () => {
           filteredData.length>0 && 
           filteredData.map((paste)=>{
             return(
-              <div className='border border-gray-400 rounded hover:scale-101 min-h-30 m-2 p-2 flex'>
-                <div className='hover:scale-101 w-[84%] flex flex-col border-r mr-1'>
-                  <h1>{paste.title}</h1>
+              <div className='border border-gray-400 rounded min-h-30 m-2 p-2 flex'>
+                <div className=' w-[84%] flex flex-col border-r mr-1'>
+                  <h1 className= ' text-xl border-b border-gray-400'>{paste.title}</h1>
                   {paste.content}
                 </div>
                 {/* <div className='bg-red-500'>
@@ -39,26 +39,26 @@ const Paste = () => {
                 </div> */}
                 <div className='flex flex-col gap-4 '>
                   <div className=' flex justify-between gap-8 h-10'>
-                    <button>
+                    <button className=' hover:scale-110' >
                     <a href={`/?pasteId=${paste?._id}`}>
                     <img className='h-5 w-5' src={assets.edit} />
                     </a>
                   </button>
-                  <button>
+                  <button className=' hover:scale-110' >
                     <a href={`/pastes/${paste?._id}`}>
                     <img className='h-5 w-5' src={assets.view} alt="" />
                     </a>
                   </button>
-                  <button onClick={()=>handleDelete(paste?._id)}>
+                  <button  className=' hover:scale-110' onClick={()=>handleDelete(paste?._id)}>
                     <img className='h-5 w-5' src={assets.delete1} alt="" />
                   </button>
-                  <button onClick={()=>{
+                  <button  className=' hover:scale-110' onClick={()=>{
                     navigator.clipboard.writeText(paste?.content)
                     toast.success("Copied to clipboard")
                   }}>
                     <img className='h-5 w-5' src={assets.copy} alt="" />
                   </button>
-                  <button onClick={()=>{
+                  <button  className=' hover:scale-110' onClick={()=>{
                     const pasteLink = `${window.location.origin}/pastes/${paste._id}`
                     navigator.clipboard.writeText(pasteLink)
                     toast.success("Link copied to clipboard")
@@ -67,7 +67,7 @@ const Paste = () => {
                   </button>
                   </div>
 
-                 <div className='flex justify-center'>
+                 <div className='flex justify-center border-b border-gray-400'>
                   {paste.created}
                 </div>
 
