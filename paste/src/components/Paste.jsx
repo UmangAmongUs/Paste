@@ -58,7 +58,11 @@ const Paste = () => {
                   }}>
                     <img className='h-5 w-5' src={assets.copy} alt="" />
                   </button>
-                  <button>
+                  <button onClick={()=>{
+                    const pasteLink = `${window.location.origin}/pastes/${paste._id}`
+                    navigator.clipboard.writeText(pasteLink)
+                    toast.success("Link copied to clipboard")
+                  }}>
                     <img className='h-5 w-5' src={assets.send} alt="" />
                   </button>
                   </div>
